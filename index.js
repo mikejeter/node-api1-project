@@ -7,11 +7,15 @@ server.listen(4000, () => {
     console.log('listening on port 4000...');
 });
 
+server.use(express.json());
+
 server.get('/', (req, res) => {
     res.send('Hello World');
 });
 
 server.get('/favicon.ico', (req, res) => {res.status(204);});
+
+// R - Read (CRUD)
 
 server.get('/hubs', (req, res) => {
     db.find()
